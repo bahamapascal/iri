@@ -28,6 +28,13 @@ public abstract class Neighbor {
         this.flagged = flagged;
     }
     
+    private boolean stopped = false;
+    public void stop() {
+        this.stopped = true;
+    }
+    public boolean isStopped() {
+        return stopped;
+    }
     private final static AtomicInteger numPeers = new AtomicInteger(0);
     public static int getNumPeers() {
         return numPeers.get();
