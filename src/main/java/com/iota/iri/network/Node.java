@@ -674,6 +674,7 @@ public class Node {
                     .filter(n -> n.equals(neighbor))
                     .forEach(TCPNeighbor::clear);
         }
+        neighbors.stream().filter(n -> n.equals(neighbor)).forEach(Neighbor::stop);
         return neighbors.remove(neighbor);
     }
 
